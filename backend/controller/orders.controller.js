@@ -132,18 +132,18 @@ class OrderController {
             const userId = req.params.userId;
             const orders = await Order.find({ ownerId: userId });
             // create dictionary of orders based on status
-            const ordersDictionary = orders.reduce((acc, order) => {
-                if (acc[order.status]) {
-                    acc[order.status].push(order);
-                } else {
-                    acc[order.status] = [order];
-                }
-                return acc;
-            }, {});
+            // const ordersDictionary = orders.reduce((acc, order) => {
+            //     if (acc[order.status]) {
+            //         acc[order.status].push(order);
+            //     } else {
+            //         acc[order.status] = [order];
+            //     }
+            //     return acc;
+            // }, {});
 
             return res.status(200).json({
                 message: "Orders fetched successfully",
-                orders: ordersDictionary,
+                orders,
                 result: true
             });
         } catch (error) {

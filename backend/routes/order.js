@@ -9,7 +9,7 @@ router.put('/update-order-status/:userId/:orderId', OrderController.updateOrderS
 
 
 
-// router.get('/get-customer-orders/:userId', OrderController.getCustomerOrders);
+router.get('/get-customer-orders/:userId', OrderController.getCustomerOrders);
 // router.get('/get-admin-orders/:userId', OrderController.getAdminOrders);
 // router.ge/t('get-order/:orderId', OrderController.getOrder);
 // updates/
